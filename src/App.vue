@@ -53,7 +53,7 @@ export default {
           .then((res) => {
             return res.json();
           })
-          .then(this.setResults);
+          .then(this.setResults, (this.query = ""));
       }
     },
     setResults(results) {
