@@ -66,7 +66,6 @@ export default {
     },
     setResults(results) {
       this.weather = results;
-      console.log(results);
     },
     dateBuilder() {
       let d = new Date();
