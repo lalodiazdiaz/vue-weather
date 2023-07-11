@@ -35,6 +35,10 @@
           <div class="humidity">Humidity: {{ weather.main.humidity }}%</div>
         </div>
       </div>
+      <div class="startScreen">
+        <img src="./assets/up.png" alt="up" width="150" />
+        <h1>Enter your city or state to search the weather forecast</h1>
+      </div>
     </main>
   </div>
 </template>
@@ -206,5 +210,33 @@ main {
   text-align: center;
   margin-top: 10px;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+}
+.startScreen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  margin-top: 5%;
+}
+.startScreen h1 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  margin-top: 5%;
+  text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+}
+.startScreen img {
+  animation: float 2s ease-out infinite;
+  margin-bottom: 5%;
+}
+
+@keyframes float {
+  50% {
+    transform: translate(0, 30px);
+  }
 }
 </style>
