@@ -35,7 +35,7 @@
           <div class="humidity">Humidity: {{ weather.main.humidity }}%</div>
         </div>
       </div>
-      <div class="startScreen">
+      <div v-else class="startScreen">
         <img src="./assets/up.png" alt="up" width="150" />
         <h1>Enter your city or state to search the weather forecast</h1>
       </div>
