@@ -28,6 +28,12 @@
           <div class="temp">{{ Math.round(weather.main.temp) }}°c</div>
           <div class="weather">{{ weather.weather[0].main }}</div>
         </div>
+        <div class="more-info">
+          <div class="fells_likes">
+            Feels_like: {{ Math.round(weather.main.feels_like) }}°c
+          </div>
+          <div class="humidity">Humidity: {{ weather.main.humidity }}%</div>
+        </div>
       </div>
     </main>
   </div>
@@ -36,6 +42,7 @@
 <script>
 export default {
   name: "app",
+
   data() {
     return {
       api_key: "55b607514ba601ce27d5f44e7cfc4dd1",
@@ -44,6 +51,7 @@ export default {
       weather: {},
     };
   },
+
   methods: {
     fetchWeather(e) {
       if (e.key == "Enter") {
@@ -58,6 +66,7 @@ export default {
     },
     setResults(results) {
       this.weather = results;
+      console.log(results);
     },
     dateBuilder() {
       let d = new Date();
@@ -186,6 +195,17 @@ main {
   font-size: 48px;
   font-weight: 700;
   font-style: italic;
+  text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.fells_likes,
+.humidity {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  margin-top: 10px;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
 }
 </style>
